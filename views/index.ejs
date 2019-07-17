@@ -2,7 +2,13 @@
 <html>
 <head>
     <title>todo app</title>
-
+    <!--dont work-->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!--引入静态文件-->
+  <link rel="stylesheet" href="/public/styles.css" type="text/css">
+  <!--
+  <script src="/assets/todo-list.js"></script>
+  -->
 </head>
 <body>
     <div class="container">
@@ -13,18 +19,21 @@
             <input type="text" name="newtask" placeholder="add new task">
             <button>add task</button>
 
-            <h2>added task</h2>
+            <h2>active task</h2>
 
             <% for (var i = 0;i < task.length; i++) { %>
                 <li><input type="checkbox" name="check" value="<%= task[i] %>"/> <%= task[i] %> </li>
-            <% } %>
+            <% } %> 
             <button formaction="/removetask" type="submit" id="top">remove</button>
+
         </form>
+
+        <h2>all task</h2>
 
         <h2>completed task</h2>
 
         <% for(var i = 0 ; i < complete.length; i++){ %>
-            <li><input type="checkbox" checked> <%= complete[i] %> </li>
+            <li><input type="checkbox" checked> <%= complete[i] %> </li> 
         <% } %>
 
     </div>
